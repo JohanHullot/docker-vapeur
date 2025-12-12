@@ -1,0 +1,13 @@
+services : 
+  vapeur:
+    build: .
+    container_name: Vapeur
+    ports:
+    - "3015:3015"
+    volumes:
+      - ./prisma/bdd.db:/app/prisma/bdd.db
+
+    env_file:
+      - .env
+      
+    command: sh -c "npx prisma migrate deploy && npm start"

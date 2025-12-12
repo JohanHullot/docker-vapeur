@@ -1,0 +1,16 @@
+<h2>{{editor.name}}</h2>
+
+<a href="../editEditor/{{editor.name}}">Modifier l'éditeur</a><br/>
+<a href="../suppressEditor/{{editor.name}}">Supprimer l'éditeur</a>
+
+
+<br/><br/>
+{{#each gameOfEditor}}
+        <li>
+            <a href="../Game/{{name}}">{{name}}</a>
+        </li>
+{{/each}}
+<br/>
+
+<a href="./">Retour à la page des éditeurs</a>
+<a href="../">Retour à la page principale</a>

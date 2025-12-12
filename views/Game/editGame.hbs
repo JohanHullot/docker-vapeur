@@ -1,0 +1,28 @@
+
+<form id="editGameForm" method="post" enctype="multipart/form-data"> {{!-- enctype pour uplaod les photos --}}
+    
+    <input type="text" name="name" value="{{game.name}}" required />
+    <input type="text" name="description" value="{{game.description}}" required />
+    <input type="datetime-local" name="date" required/>
+
+
+    <label for="category">Choisir la categorie:</label>
+    <select name="category">
+        <option id="{{categoryGame.id}}">{{categoryGame.name}}</option>
+        {{#each category}}
+            <option id="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+
+    <label for="editor">Choisir l'éditeur:</label>
+    <select name="editor">
+        <option id="{{editorGame.id}}">{{editorGame.name}}</option>
+        {{#each editor}}
+            <option id="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    <input type="file" name="picture" accept=".jpg, .jpeg, .png, .gif"/>
+    <input type="submit" value="Mettre à jour le jeu dans Vapeur"/>
+</form>
